@@ -18,8 +18,8 @@ before_install:
   - "./.travis_riodeps.sh"
 install:
   - "pip install -U pip"
-  - "pip install --use-wheel --no-index --find-links=$HOME/wheelhouse -e .[test] --cache-dir $HOME/.pip-cache"
-  - "pip install --use-wheel -e .[test] --cache-dir $HOME/.pip-cache"
+  - "pip install rasterio --use-wheel --no-index --find-links=$HOME/wheelhouse --cache-dir $HOME/.pip-cache"
+  - "pip install -e .[test] --use-wheel --find-links=$HOME/wheelhouse --cache-dir $HOME/.pip-cache"
 script:
   - py.test --cov mbtiles --cov-report term-missing
 after_success:
